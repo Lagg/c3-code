@@ -1,4 +1,4 @@
-# Coffee, Code and Crafts #
+# Code, Coffee and Crafts #
 
 This repo contains the code I wrote for my Three Cs series as part of Project P.
 The code in this repo tries to demonstrate some lesser understood parts of programming at lower
