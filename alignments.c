@@ -25,14 +25,21 @@ int main() {
 
     printf("%d\n", sizeof(test));
 
+    /* Set the bytes pointer to the address of the struct instance */
     bytes = (unsigned char *)&foo;
 
+    /* Set a block of memory equal to the size of the struct to 0 starting at the
+     * address given by &foo
+     */
     memset(&foo, 0, sizeof(test));
 
     foo.four = 0xdeadbeef;
     foo.two = 0xcafe;
 
-    /* You may be wondering why this works, because pointers and low level memory management are awesome */
+    /* Here we iterate each byte of memory where the struct instance is located,
+     * this works because the bytes pointer is set to the address of it and thus
+     * enables us to look through it byte by byte (or char by char)
+     */
     for (i = 0; i < sizeof(test); ++i) {
         printf("%x ", bytes[i]);
     }
