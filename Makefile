@@ -1,6 +1,6 @@
 CFLAGS = -ansi -pedantic -Wall -Wextra
 
-all: alignments
+all: alignments unions
 
 alignments: alignments.o
 	$(CC) $(LDFLAGS) -o $@ $^
@@ -8,7 +8,13 @@ alignments: alignments.o
 alignments.o: alignments.c
 	$(CC) -c $(CFLAGS) $(LDFLAGS) -o $@ $<
 
-clean:dummy
-	rm -f *.o
+unions: unions.o
+	$(CC) $(LDFLAGS) -o $@ $^
 
-dummy:
+unions.o: unions.c
+	$(CC) -c $(CFLAGS) $(LDFLAGS) -o $@ $<
+
+clean: .PHONY
+	rm -f *.o alignments unions
+
+.PHONY:
