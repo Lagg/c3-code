@@ -280,6 +280,7 @@ int main() {
                     }
                     break;
                 default:
+                    fprintf(stderr, "Unimplemented header type: %d\n", oheader.type);
                     break;
             }
 
