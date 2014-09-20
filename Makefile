@@ -1,5 +1,5 @@
 CFLAGS = -ansi -pedantic -Wall -Wextra -Wno-long-long -g
-BINARIES = alignments unions sockets journal
+BINARIES = alignments unions sockets journal nullterminators
 
 COMPILE_LINE = $(CC) -c $(CFLAGS) -o $@ $<
 LINK_LINE = $(CC) $(LDFLAGS) -o $@ $^
@@ -28,6 +28,12 @@ journal: journal.o
 	$(LINK_LINE)
 
 journal.o: journal.c
+	$(COMPILE_LINE)
+
+nullterminators: nullterminators.o
+	$(LINK_LINE)
+
+nullterminators.o: nullterminators.c
 	$(COMPILE_LINE)
 
 .PHONY: clean
