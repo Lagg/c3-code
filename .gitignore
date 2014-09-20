@@ -1,0 +1,9 @@
+*.o
+journal
+sockets
+unions
+unions2
+alignments
+nullterminators
+core.*
+*.journal
