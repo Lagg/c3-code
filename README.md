@@ -26,7 +26,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 The following is a list of lesson plans for future videos in no particular order.
 
 * Tic-tac toe game for assholes - forgot what I meant by this.
-* * Extension language APIs and libs
+  * Extension language APIs and libs
 * Testcase of a bug parallel to what occurred with heartbleed that demonstrates why the hysteria and conspiracy theories are stupid (nullterminators.c may be involved)
 * Endianness
 * Trees, what they are at their core.
