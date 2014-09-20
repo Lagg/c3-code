@@ -1,32 +1,35 @@
 CFLAGS = -ansi -pedantic -Wall -Wextra -Wno-long-long -g
+BINARIES = alignments unions sockets journal
 
-all: alignments unions sockets journal
+COMPILE_LINE = $(CC) -c $(CFLAGS) -o $@ $<
+LINK_LINE = $(CC) $(LDFLAGS) -o $@ $^
+
+all: $(BINARIES)
 
 alignments: alignments.o
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(LINK_LINE)
 
 alignments.o: alignments.c
-	$(CC) -c $(CFLAGS) $(LDFLAGS) -o $@ $<
+	$(COMPILE_LINE)
 
 unions: unions.o
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(LINK_LINE)
 
 unions.o: unions.c
-	$(CC) -c $(CFLAGS) $(LDFLAGS) -o $@ $<
+	$(COMPILE_LINE)
 
 sockets: socket.o
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(LINK_LINE)
 
 socket.o: socket.c
-	$(CC) -c $(CFLAGS) -D_POSIX_SOURCE $(LDFLAGS) -o $@ $<
+	$(COMPILE_LINE) -D_POSIX_SOURCE
 
 journal: journal.o
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(LINK_LINE)
 
 journal.o: journal.c
-	$(CC) -c $(CFLAGS) -D_POSIX_SOURCE $(LDFLAGS) -o $@ $<
+	$(COMPILE_LINE)
 
-clean: .PHONY
-	rm -f *.o alignments unions sockets journal
-
-.PHONY:
+.PHONY: clean
+clean:
+	rm -f *.o $(BINARIES)
