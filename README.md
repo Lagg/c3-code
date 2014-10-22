@@ -7,7 +7,7 @@ of neat stuff in general. Hope you find it useful *-- Lagg*
 
 # License #
 
-Copyright (c) 2010-2013, Anthony Garcia <anthony@lagg.me>
+Copyright (c) 2014+, Anthony Garcia <anthony@lagg.me>
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
